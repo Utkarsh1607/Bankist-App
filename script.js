@@ -25,8 +25,8 @@ const account1 = {
     '2022-01-13T23:36:17.929Z',
     '2022-01-15T10:51:36.790Z',
   ],
-  currency: 'EUR',
-  locale: 'pt-PT', // de-DE
+  currency: 'INR',
+  locale: 'en-IN', // de-DE
 };
 
 const account2 = {
@@ -45,11 +45,51 @@ const account2 = {
     '2020-06-25T18:49:59.371Z',
     '2020-07-26T12:01:20.894Z',
   ],
-  currency: 'USD',
-  locale: 'en-US',
+  currency: 'INR',
+  locale: 'en-IN',
 };
 
-const accounts = [account1, account2];
+const account3 = {
+  owner: 'Shoumik verma',
+  movements: [3000, 400, -1950, -790, -3210, -1400, 8500, -930],
+  interestRate: 1.5,
+  pin: 3333,
+
+  movementsDates: [
+    '2019-11-01T13:15:33.035Z',
+    '2019-11-30T09:48:16.867Z',
+    '2019-12-25T06:04:23.907Z',
+    '2020-01-25T14:18:46.235Z',
+    '2020-02-05T16:33:06.386Z',
+    '2020-04-10T14:43:26.374Z',
+    '2020-06-25T18:49:59.371Z',
+    '2020-07-26T12:01:20.894Z',
+  ],
+  currency: 'INR',
+  locale: 'en-IN',
+};
+
+const account4 = {
+  owner: 'Shoumik verma',
+  movements: [400, 700, -1750, -790, -3210, -1100, 8508, -930],
+  interestRate: 1.5,
+  pin: 4444,
+
+  movementsDates: [
+    '2019-11-01T13:15:33.035Z',
+    '2019-11-30T09:48:16.867Z',
+    '2019-12-25T06:04:23.907Z',
+    '2020-01-25T14:18:46.235Z',
+    '2020-02-05T16:33:06.386Z',
+    '2020-04-10T14:43:26.374Z',
+    '2020-06-25T18:49:59.371Z',
+    '2020-07-26T12:01:20.894Z',
+  ],
+  currency: 'INR',
+  locale: 'en-IN',
+};
+
+const accounts = [account1, account2, account3, account4];
 
 /////////////////////////////////////////////////
 
@@ -195,7 +235,7 @@ const updateUI = function (acc) {
 };
 
 const startLogoutTimer = function () {
-  let time = 100;
+  let time = 600;
   const tick = function () {
     const minutes = String(Math.trunc(time / 60)).padStart(2, 0);
     const seconds = String(Math.trunc(time % 60)).padStart(2, 0);
@@ -387,7 +427,7 @@ const options = {
   currency: 'EUR',
   // useGrouping: false,// it does not add commas or separators
 };
-console.log('US:', new Intl.NumberFormat('en-US', options).format(num));
+console.log('US:', new Intl.NumberFormat('en-IN', options).format(num));
 console.log('INDIA:', new Intl.NumberFormat('hi-IN', options).format(num));
 console.log('SYRIA:', new Intl.NumberFormat('ar-SY', options).format(num));
 console.log(
